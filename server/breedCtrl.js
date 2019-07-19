@@ -36,6 +36,16 @@ module.exports = {
         })
         dogs.splice(index,1)
         res.status(200).send(dogs)
+    },
+    //HELP
+    queryFinder: (req,res) => {
+        //console.log(req.query)
+       let { breed } = req.query
+       console.log(breed)
+       let correctBreed = dogs.filter(elm => {
+          return elm.breed === breed
+       }) 
+        res.status(200).send(correctBreed)
     }
 
 }

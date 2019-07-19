@@ -19,6 +19,7 @@ class App extends Component {
     this.updateDogs = this.updateDogs.bind(this)
     this.addDog = this.addDog.bind(this)
     this.deleteDog = this.deleteDog.bind(this)
+    this.displayDog = this.displayDog.bind(this)
   }
   //compoent did mount is just another built in method
   componentDidMount(){
@@ -45,6 +46,13 @@ class App extends Component {
       this.setState({dogs: res.data})
     })
   }
+  displayDog(breed) {
+    //HELP
+    axios.get(`/api/dogbreed?breed=${breed}`).then(result => {
+      console.log(result.data)
+      this.setState({dogs: result.data})
+    })
+  }
   render() {
   return (
     <div className="App">
@@ -53,7 +61,7 @@ class App extends Component {
       <UpdateBreed deleteDog={this.deleteDog} updateDogs={this.updateDogs} dogs={this.state.dogs} />
       <br/>
       <AddBreed addDog={this.addDog} dogs={this.state.dogs} />
-      <AllBreeds dogs={this.state.dogs} />
+      <AllBreeds dogs={this.state.dogs} displayDog={this.displayDog}/>
       <DeleteBreed dogs={this.state.dogs} deleteDog={this.deleteDog} />
 
     </div>
