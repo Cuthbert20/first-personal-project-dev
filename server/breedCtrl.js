@@ -6,7 +6,6 @@ let id = dogs.length + 1
 module.exports = {
     allBreeds: (req,res) => {
         //console.log("boomstick")
-        //get and delete doesn't have a body others req.prams or req.query
         res.status(200).send(dogs)
     },
     updateBreed: (req,res) => {
@@ -26,6 +25,16 @@ module.exports = {
     newDog: (req,res) => {
         dogs.push({...req.body, id})
         id++
+        res.status(200).send(dogs)//dogs is the response to our post request cause we are sending it ie send
+    },
+    delete: (req,res) => {
+        //console.log(req.params) will give you the obj id
+        const {id} = req.params
+        //must match what the key is called in data. ie breed
+        const index = dogs.findIndex(doggy => {
+            return doggy.id === +id
+        })
+        dogs.splice(index,1)
         res.status(200).send(dogs)
     }
 

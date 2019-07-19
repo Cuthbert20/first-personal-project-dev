@@ -5,7 +5,8 @@ export default class UpdateBreed extends Component {
         super(props)
 
         this.state = {
-            newBreed: ""
+            newBreed: "",
+            aDog: ""
         }
     }
     render(){
@@ -13,17 +14,23 @@ export default class UpdateBreed extends Component {
         console.log("props")
         let allDogs = this.props.dogs.map((val) => {
             return <div key={val.id}>{val.breed}
-            <input placeholder="Update Name" ref={el => this.input = el} onChange={(e) => this.setState({newBreed: e.target.value})} type="text"/>
+            <input placeholder="Update Name"  onChange={(e) => this.setState({newBreed: e.target.value})} ref={el => this.input = el} type="text"/>
             <img src={val.img} alt=""/>
             <button onClick={() => {
-                this.props.updateDogs(val.id, {breed: this.state.newBreed}) //console.log(val)
-                this.input.value = ""}}  ><i className="fas fa-file-signature"></i></button>
-            
+                this.props.updateDogs(val.id, {breed: this.state.newBreed})
+                this.input.value = ""
+            }} ><i className="fas fa-file-signature"></i></button>
+                <button onClick={() => this.props.deleteDog(val.id)} >Delete</button>
             </div>
         })
+        
+
+        //.filter.map
         console.log(allDogs)
         return(
-            <div>{allDogs}</div>
+            <div>     
+                {allDogs}
+            </div>
         )
     }
 }

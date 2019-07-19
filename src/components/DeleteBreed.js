@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-export defualt class DeleteBreed extends Component {
+export default class DeleteBreed extends Component {
     constructor(){
         super()
 
@@ -8,7 +8,12 @@ export defualt class DeleteBreed extends Component {
 
         }
     }
-    render(){
-        return()
+    render() {
+        return(
+
+
+            
+            <button onClick={() => this.props.deleteDog(this.props.dogs)} >Delete</button>
+        )
     }
-}
+} 

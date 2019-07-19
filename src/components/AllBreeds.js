@@ -18,7 +18,7 @@ export default class AllBreeds extends Component {
         //dropdownlist of all breeds
        <section>
         <select name="" id="">
-            {dogBreeds}
+        {dogBreeds}
         </select>
        </section>
     )

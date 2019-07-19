@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import AddBreed from './components/AddBreed'
 import AllBreeds from './components/AllBreeds'
 import UpdateBreed from './components/UpdateBreed'
+import DeleteBreed from './components/DeleteBreed'
 
 
 class App extends Component {
@@ -16,6 +17,8 @@ class App extends Component {
 
     }
     this.updateDogs = this.updateDogs.bind(this)
+    this.addDog = this.addDog.bind(this)
+    this.deleteDog = this.deleteDog.bind(this)
   }
   //compoent did mount is just another built in method
   componentDidMount(){
@@ -29,7 +32,16 @@ class App extends Component {
     })
   }
   addDog(body) {
+    //making an axios call and setting the body
+    //we get somthing back a response ie res
     axios.post('/api/dogs', body).then(res => {
+      this.setState({dogs: res.data})
+    })
+  }
+  deleteDog(id) {
+    //remeber axios calls go on buttons
+    axios.delete(`/api/dogs/${id}`).then(res => {
+      //console.log(res.data)
       this.setState({dogs: res.data})
     })
   }
@@ -37,9 +49,13 @@ class App extends Component {
   return (
     <div className="App">
       <Navbar />
-      <UpdateBreed updateDogs={this.updateDogs} dogs={this.state.dogs} />
-      <AddBreed addDogFn={this.addDog} dogs={this.state.dogs} />
+      <br/>
+      <UpdateBreed deleteDog={this.deleteDog} updateDogs={this.updateDogs} dogs={this.state.dogs} />
+      <br/>
+      <AddBreed addDog={this.addDog} dogs={this.state.dogs} />
       <AllBreeds dogs={this.state.dogs} />
+      <DeleteBreed dogs={this.state.dogs} deleteDog={this.deleteDog} />
+
     </div>
   )
   }
