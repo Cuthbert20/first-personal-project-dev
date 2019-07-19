@@ -9,6 +9,7 @@ app.use(express.json())
 
 app.get('/api/dogs', breedCtrl.allBreeds)
 app.put('/api/dogs/:id', breedCtrl.updateBreed)
+app.post('/api/dogs', breedCtrl.newDog)
 
 
 

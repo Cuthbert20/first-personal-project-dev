@@ -9,15 +9,15 @@ export default class UpdateBreed extends Component {
         }
     }
     render(){
-        //when 
+        //Don't try to change props if you need to manipulate props you need to use a passed down function.
         console.log("props")
         let allDogs = this.props.dogs.map((val) => {
             return <div key={val.id}>{val.breed}
-            <input onChange={(e) => this.setState({newBreed: e.target.value})} type="text"/>
+            <input placeholder="Update Name" ref={el => this.input = el} onChange={(e) => this.setState({newBreed: e.target.value})} type="text"/>
             <img src={val.img} alt=""/>
             <button onClick={() => {
                 this.props.updateDogs(val.id, {breed: this.state.newBreed}) //console.log(val)
-            }} ><i class="fas fa-file-signature"></i></button>
+                this.input.value = ""}}  ><i className="fas fa-file-signature"></i></button>
             
             </div>
         })

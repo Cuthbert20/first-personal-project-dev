@@ -28,12 +28,17 @@ class App extends Component {
       this.setState({dogs: res.data})
     })
   }
+  addDog(body) {
+    axios.post('/api/dogs', body).then(res => {
+      this.setState({dogs: res.data})
+    })
+  }
   render() {
   return (
     <div className="App">
       <Navbar />
       <UpdateBreed updateDogs={this.updateDogs} dogs={this.state.dogs} />
-      <AddBreed dogs={this.state.dogs} />
+      <AddBreed addDogFn={this.addDog} dogs={this.state.dogs} />
       <AllBreeds dogs={this.state.dogs} />
     </div>
   )

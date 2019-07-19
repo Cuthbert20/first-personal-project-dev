@@ -9,9 +9,13 @@ export default class AddBreed extends Component {
         }
     }
     render(){
+        let newDog = []
         return(
             <main>
-                <p>addBreed </p>
+                <button>Add Breed</button>
+                <input type="text" placeholder="Breed"/>
+                <input type="text" placeholder="Info"/>
+                <input type="text" placeholder="Photo URL"/>
             </main>
         )
     }

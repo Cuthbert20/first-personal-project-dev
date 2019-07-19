@@ -1,6 +1,7 @@
 const dogs = require('../src/data')
 
 
+let id = dogs.length + 1
 
 module.exports = {
     allBreeds: (req,res) => {
@@ -20,6 +21,11 @@ module.exports = {
         })
         console.log("index", index)
         dogs[index].breed = breed
+        res.status(200).send(dogs)
+    },
+    newDog: (req,res) => {
+        dogs.push({...req.body, id})
+        id++
         res.status(200).send(dogs)
     }
 
