@@ -11,7 +11,8 @@ export default class AllBreeds extends Component {
     }
     render(){
         let dogBreeds = this.props.dogs.map((val) => {
-            return <option>{val.breed}</option>
+            //key helps react keep track of elments that are updated, changed, deleted, ect on the virtual dom
+            return <option key={val.id}>{val.breed}</option>
         })
     return(
         //dropdownlist of all breeds

@@ -6,7 +6,9 @@ const dogs = require("../src/data")
 
 app.use(express.json())
 
+
 app.get('/api/dogs', breedCtrl.allBreeds)
+app.put('/api/dogs/:id', breedCtrl.updateBreed)
 
 
 

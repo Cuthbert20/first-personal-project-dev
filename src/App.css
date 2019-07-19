@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  height: auto;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
