@@ -64,6 +64,12 @@ span {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.update-btn {
+  color: #0099CC; 
+  background: transparent; 
+  border: 2px solid rgb(76, 168, 199);
+  border-radius: 6px;
+}
 #hidden {
   display: none;
 }
@@ -78,7 +84,7 @@ span {
 .main-delete {
   color: #0099CC; 
   background: transparent; 
-  border: 2px solid #0099CC;
+  border: 2px solid rgb(211, 69, 69);
   border-radius: 6px; 
 }
 #nav-cnt {

@@ -12,9 +12,9 @@ module.exports = {
         //destructering req.params and assigning its current value to id
         //console.log(req.prams)
         const {id} = req.params
-        console.log('id',req.params)
+        console.log('id',req.params,id)
         const {breed} = req.body
-        console.log("name", req.body)
+        console.log("name", req.body,breed)
         const index = dogs.findIndex(breed => {
             return breed.id === +id
         })
@@ -24,7 +24,7 @@ module.exports = {
     },
     newDog: (req,res) => {
         dogs.push({...req.body, id})
-        id++
+        id++//we are adding an id to the obj, we created a variable callled id and we are adding one to that id number
         res.status(200).send(dogs)//dogs is the response to our post request cause we are sending it ie send
     },
     delete: (req,res) => {
