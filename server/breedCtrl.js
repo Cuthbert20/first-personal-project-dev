@@ -5,12 +5,12 @@ let id = dogs.length + 1
 
 module.exports = {
     allBreeds: (req,res) => {
-        //console.log("boomstick")
+        //console.log("boomstick", req.body)
         res.status(200).send(dogs)
     },
     updateBreed: (req,res) => {
         //destructering req.params and assigning its current value to id
-        //console.log(req.body)
+        //console.log(req.prams)
         const {id} = req.params
         console.log('id',req.params)
         const {breed} = req.body

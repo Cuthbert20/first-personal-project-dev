@@ -11,7 +11,7 @@ app.get('/api/dogs', breedCtrl.allBreeds)
 app.put('/api/dogs/:id', breedCtrl.updateBreed)
 app.post('/api/dogs', breedCtrl.newDog)
 app.delete('/api/dogs/:id', breedCtrl.delete)
-app.get('/api/dogbreed',breedCtrl.queryFinder)
+app.get('/api/dogbreed',breedCtrl.queryFinder)//we are querying ? reps the end of the url then you enter the key then a = then the value
 
 
 

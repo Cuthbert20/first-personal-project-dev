@@ -56,7 +56,9 @@ class App extends Component {
   render() {
   return (
     <div className="App">
-      <Navbar />
+      <div>
+        <Navbar />
+      </div>
       <br/>
       <UpdateBreed deleteDog={this.deleteDog} updateDogs={this.updateDogs} dogs={this.state.dogs} />
       <br/>

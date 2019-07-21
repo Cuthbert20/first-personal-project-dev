@@ -43,7 +43,7 @@ export default class AddBreed extends Component {
                     called on buttons. You don't want to put it on an input
                     because everytime they type it will send the axios request */}
                     {/* <img src={img} alt=""/> */}
-                    <button onClick={() => this.props.addDog({breed: breed, info: info, img: img})} >Submit</button>
+                    <button  className="submit-btn" onClick={() => this.props.addDog({breed: breed, info: info, img: img})} >Submit</button>
                     </main>
                 )
             }

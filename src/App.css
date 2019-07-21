@@ -1,12 +1,51 @@
+
 .App {
+  /* border: 2px dotted orange; */
   text-align: center;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+  align-content: space-between;
+  height: 100%;
+  /* background-color: aquamarine; */
+}
+.card-container {
+  /* border: 1px solid purple; */
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.dogcard {
+  /* border: 1px green solid; */
+  width: 32%;
+  /* width is 32% of parent */
+
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: space-around;
+  /* border: solid 1px red; */
+  width: 100vw;
 }
 img {
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 150px;
   height: auto;
+}
+span {
+  font-size: 10px;
+}
+.spacer {
+  line-height: 32px;
+  background-color: black;
+
 }
 
 .App-logo {
@@ -25,9 +64,26 @@ img {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+#hidden {
+  display: none;
+}
 
 .App-link {
   color: #61dafb;
+}
+.main-img:hover + #hidden {
+  display: block;
+
+}
+.main-delete {
+  color: #0099CC; 
+  background: transparent; 
+  border: 2px solid #0099CC;
+  border-radius: 6px; 
+}
+#nav-cnt {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 @keyframes App-logo-spin {

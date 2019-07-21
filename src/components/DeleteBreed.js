@@ -12,8 +12,8 @@ export default class DeleteBreed extends Component {
         return(
 
 
-            
-            <button onClick={() => this.props.deleteDog(this.props.dogs)} >Delete</button>
+
+            <button className="main-delete" onClick={() => this.props.deleteDog(this.props.dogs)} >Delete</button>
         )
     }
 } 
