@@ -14,11 +14,11 @@ export default class UpdateBreed extends Component {
         console.log("props")
         let allDogs = this.props.dogs.map((val) => {
             return <div className="dogcard" key={val.id}>{val.breed}
-            <div>
+            <article>
             <img className="main-img" src={val.img} alt=""/>
             <div id="hidden"><i class="fas fa-heart-square fa-lg"></i></div>
             <main>{val.info}</main>
-            </div>
+            </article>
             <input size="10" placeholder="Update Name"  onChange={(e) => this.setState({newBreed: e.target.value})} ref={el => this.input = el} type="text"/>
             <br/>
             <button  className="update-btn" onClick={() => {

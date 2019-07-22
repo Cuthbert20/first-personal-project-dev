@@ -9,7 +9,8 @@
 	align-items: center;
   align-content: space-between;
   height: 100%;
-  /* background-color: aquamarine; */
+  /* background-image: url("https://static.vecteezy.com/system/resources/previews/000/464/040/non_2x/vector-dog-seamless-pattern-theme-bone-paw-foot-print-for-use-as-wallpaper-or-background.jpg"); */
+  /* background-repeat: no-repeat; */
 }
 .card-container {
   /* border: 1px solid purple; */
@@ -23,6 +24,12 @@
   /* width is 32% of parent */
 
 }
+#icons {
+  color: white;
+}
+#dog-logo {
+  color: oldlace;
+}
 .navbar {
   display: flex;
   flex-direction: row;
@@ -31,6 +38,8 @@
   justify-content: space-around;
   /* border: solid 1px red; */
   width: 100vw;
+  background-image: linear-gradient(rgb(65, 54, 54), rgb(0, 0, 0));
+  color: white;
 }
 img {
   border: 2px solid #ddd;

@@ -6,6 +6,7 @@ import AddBreed from './components/AddBreed'
 import AllBreeds from './components/AllBreeds'
 import UpdateBreed from './components/UpdateBreed'
 import DeleteBreed from './components/DeleteBreed'
+import Footer from './components/Footer'
 
 
 class App extends Component {
@@ -24,6 +25,10 @@ class App extends Component {
   //compoent did mount is just another built in method
   componentDidMount(){
     axios.get('/api/dogs').then((result) => this.setState({dogs: result.data}))
+    .catch(function (error){
+      error = "Its not working"
+      alert(error)
+    })
   }  
   updateDogs(id, body){
     //when you use axios you are send a promise
@@ -64,7 +69,9 @@ class App extends Component {
       <br/>
       <AddBreed addDog={this.addDog} dogs={this.state.dogs} />
       <AllBreeds dogs={this.state.dogs} displayDog={this.displayDog}/>
+      <Footer />
       <DeleteBreed dogs={this.state.dogs} deleteDog={this.deleteDog} />
+      
 
     </div>
   )
